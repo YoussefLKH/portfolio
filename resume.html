@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Lakhal — Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:  #1a1618;
+  --red:  #c8102e;
+  --gold: #a07828;
+  --dim:  #5a5050;
+  --soft: #8a7a68;
+  --rule: #e0d8cc;
+  --bg:   #ffffff;
+}
+
+@page {
+  size: letter;
+  margin: 0.55in 0.65in;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 9.2pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── HEADER ─────────────────────────────── */
+.header { text-align: center; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1.5px solid var(--ink); }
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26pt; font-weight: 900;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink); line-height: 1;
+  margin-bottom: 5px;
+}
+.role {
+  font-size: 9pt; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red); font-weight: 600; margin-bottom: 8px;
+}
+.contacts {
+  font-size: 8.2pt; color: var(--dim);
+  display: flex; justify-content: center; align-items: center;
+  gap: 6px; flex-wrap: wrap;
+}
+.contacts a { color: var(--red); text-decoration: none; }
+.contacts a:hover { text-decoration: underline; }
+.dot { color: var(--rule); }
+
+/* ── LAYOUT ─────────────────────────────── */
+.body-wrap {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 28px;
+}
+
+/* ── SECTIONS ───────────────────────────── */
+.section { margin-bottom: 18px; }
+.section:last-child { margin-bottom: 0; }
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 9pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px;
+  color: var(--red);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 10px;
+}
+
+/* ── PROFILE ────────────────────────────── */
+.profile p {
+  font-size: 8.8pt; line-height: 1.65; color: var(--dim);
+}
+
+/* ── ENTRY (projects / experience) ─────── */
+.entry { margin-bottom: 13px; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; margin-bottom: 1px;
+}
+.entry-name {
+  font-weight: 700; font-size: 9pt; color: var(--ink);
+}
+.entry-date {
+  font-size: 7.8pt; color: var(--soft); white-space: nowrap; flex-shrink: 0;
+  font-style: italic;
+}
+.entry-stack {
+  font-size: 7.6pt; color: var(--red); margin-bottom: 5px;
+  font-style: italic;
+}
+.entry-bullets { list-style: none; }
+.entry-bullets li {
+  font-size: 8.4pt; line-height: 1.6; color: var(--dim);
+  padding-left: 14px; position: relative; margin-bottom: 2px;
+}
+.entry-bullets li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--gold); font-size: 8pt;
+}
+.entry-link {
+  font-size: 7.6pt; color: var(--red);
+  text-decoration: none; font-style: italic;
+}
+
+/* ── SIDEBAR ────────────────────────────── */
+.sidebar .section { margin-bottom: 16px; }
+
+.skill-group { margin-bottom: 9px; }
+.skill-label {
+  font-size: 7.4pt; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 3px;
+}
+.skill-items {
+  font-size: 8pt; color: var(--dim); line-height: 1.7;
+}
+
+.edu-name { font-weight: 700; font-size: 8.8pt; color: var(--ink); margin-bottom: 1px; }
+.edu-school { font-size: 8pt; color: var(--red); font-style: italic; margin-bottom: 2px; }
+.edu-date { font-size: 7.6pt; color: var(--soft); margin-bottom: 6px; }
+.edu-notes { list-style: none; }
+.edu-notes li {
+  font-size: 7.8pt; color: var(--dim); padding-left: 12px; position: relative; margin-bottom: 2px;
+}
+.edu-notes li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+
+.link-item { margin-bottom: 5px; }
+.link-label {
+  font-size: 7.4pt; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600;
+}
+.link-val { font-size: 8pt; color: var(--dim); }
+.link-val a { color: var(--red); text-decoration: none; }
+
+@media print {
+  body { background: white; }
+  .header { -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ───────────────────────────────────────── -->
+<div class="header">
+  <div class="name">Youssef Lakhal</div>
+  <div class="role">Full-Stack Developer &nbsp;·&nbsp; AI Integration Specialist</div>
+  <div class="contacts">
+    <span>Halifax, NS</span>
+    <span class="dot">·</span>
+    <a href="tel:9022106502">(902) 210-6502</a>
+    <span class="dot">·</span>
+    <a href="mailto:yousseflkh25901@gmail.com">yousseflkh25901@gmail.com</a>
+    <span class="dot">·</span>
+    <a href="https://github.com/YoussefLKH">github.com/YoussefLKH</a>
+    <span class="dot">·</span>
+    <a href="https://yousseflakhal.com">yousseflakhal.com</a>
+  </div>
+</div>
+
+<!-- ── BODY ─────────────────────────────────────────── -->
+<div class="body-wrap">
+
+  <!-- ── MAIN COLUMN ─────────────────────────────── -->
+  <div class="main">
+
+    <!-- PROFILE -->
+    <div class="section profile">
+      <div class="sec-title">Profile</div>
+      <p>Full-stack developer and Computing Science graduate with hands-on experience building production-grade AI-powered platforms, browser-based applications, and real-time systems. Comfortable working across the entire stack — from backend API architecture and database design to frontend UI and cloud deployment. Proven ability to ship complete, end-to-end products under real constraints.</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="sec-title">Projects</div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Halifax.AI — AI Agency SaaS Platform</div>
+          <div class="entry-date">2025 – Present</div>
+        </div>
+        <div class="entry-stack">Node.js · Express · Firebase · Claude API · Stripe · Python · Google Drive API · Gmail API</div>
+        <ul class="entry-bullets">
+          <li>Architected and built a full-stack SaaS platform deploying 4 specialized AI agents (Nova, Atlas, Echo, Vault) serving small businesses across social media, web audits, customer service, and document automation</li>
+          <li>Built a 7-step AI strategy wizard that queries Google Places, PageSpeed Insights, and Claude API in real time to generate personalized business strategy reports with scored insights and recommendations</li>
+          <li>Integrated Stripe subscription billing with webhook-driven agent provisioning — on successful payment, automatically activates the client's AI agent and provisions a structured Google Drive workspace</li>
+          <li>Developed a real-time chat dashboard using Firebase Firestore enabling live client-agent conversations with full message history, admin reply support, and unread thread tracking</li>
+        </ul>
+        <a class="entry-link" href="https://halifaxai-beta.onrender.com">↗ halifaxai-beta.onrender.com</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">P2P Encrypted Chat — CSCI 3421: Data Communications &amp; Networking</div>
+          <div class="entry-date">Sep – Dec 2025</div>
+        </div>
+        <div class="entry-stack">JavaScript · XOR Cipher · Diffie-Hellman · Socket Programming · Cryptography</div>
+        <ul class="entry-bullets">
+          <li>Built a browser-based peer-to-peer encrypted chat demonstrating real cryptographic concepts: Diffie-Hellman key exchange (modular exponentiation, p=23/g=5) and XOR symmetric encryption</li>
+          <li>Live network intercept panel displays every packet's hex-encoded payload — simulating what a network eavesdropper would capture, making the encryption visible end-to-end</li>
+          <li>Dynamic multi-peer mesh supports up to 6 simultaneous peers (full-mesh routing) with real-time encryption and decryption shown per message</li>
+        </ul>
+        <a class="entry-link" href="https://p2p-encrypted-chat.vercel.app">↗ p2p-encrypted-chat.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Void Rush &amp; TimeSplit — Browser-Based 2D Games</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="entry-stack">TypeScript · PixiJS · Vite · Node.js · Express · SQLite · REST API</div>
+        <ul class="entry-bullets">
+          <li>Built two fully playable browser games from scratch: a 15-level arcade shooter (Void Rush) and a 20-level time-loop puzzle game (TimeSplit) — both with custom 60fps game engines, no game frameworks</li>
+          <li>TimeSplit's ghost sync engine records inputs frame-by-frame and replays up to 8 simultaneous ghost agents in perfect fixed-timestep synchronization across loops</li>
+          <li>Integrated live leaderboard backends via REST API (Express + SQLite) handling real-time score submission; conducted cross-browser testing across Chrome, Firefox, Safari, and mobile WebKit</li>
+        </ul>
+        <a class="entry-link" href="https://voidrush.vercel.app">↗ voidrush.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Client Business Websites — Freelance Web Development</div>
+          <div class="entry-date">2025 – Present</div>
+        </div>
+        <div class="entry-stack">HTML5 · CSS3 · JavaScript · Node.js · Twilio · Responsive Design</div>
+        <ul class="entry-bullets">
+          <li>Delivered multiple production websites and booking systems for local businesses — full lifecycle from brief through design, development, and deployment</li>
+          <li>Built Get Right Cuts: barbershop booking platform with real-time slot availability, Twilio SMS confirmation flow, and password-protected admin dashboard (Vercel serverless)</li>
+          <li>Applied SEO fundamentals including semantic HTML, meta tags, and performance optimization to improve discoverability for local business clients</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Accessibility-Focused Mobile App — Northwood Inc.</div>
+          <div class="entry-date">Sep – Dec 2023</div>
+        </div>
+        <div class="entry-stack">Mobile Development · WCAG · Accessible UI Design</div>
+        <ul class="entry-bullets">
+          <li>Developed a prototype mobile application improving web interaction for users with accessibility needs — keyboard navigation, screen-reader support, and audio accessibility features</li>
+          <li>Collaborated with Northwood Inc. through iterative stakeholder reviews, incorporating real-world feedback to meet WCAG-aligned accessibility standards</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── SIDEBAR ──────────────────────────────────── -->
+  <div class="sidebar">
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="sec-title">Technical Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="skill-items">JavaScript ES6+, TypeScript, Python, C# / .NET, Java, C / C++, SQL / T-SQL</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Frameworks</div>
+        <div class="skill-items">Node.js, Express, React, Svelte, PixiJS, Vite</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">AI &amp; APIs</div>
+        <div class="skill-items">Claude API, OpenAI API, Stripe, Firebase, Google Drive API, Gmail API, Twilio</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Cloud &amp; Platforms</div>
+        <div class="skill-items">Microsoft Azure, AWS, Google Cloud, Docker, Git / GitHub, Vercel, Firebase Auth, Render</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Concepts</div>
+        <div class="skill-items">REST APIs, System Integrations, SaaS Architecture, Agile / Scrum, CI/CD Pipelines, OAuth 2.0, Real-time Systems, Socket Programming</div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="sec-title">Education</div>
+      <div class="edu-name">Bachelor of Computing Science</div>
+      <div class="edu-school">Saint Mary's University</div>
+      <div class="edu-date">Halifax, NS &nbsp;·&nbsp; Sep 2019 – 2025</div>
+      <ul class="edu-notes">
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Software Engineering</li>
+        <li>Data Communications &amp; Networking</li>
+        <li>Database Systems</li>
+        <li>Operating Systems</li>
+        <li>Mobile Development</li>
+      </ul>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="sec-title">Experience</div>
+
+      <div class="entry-top" style="margin-bottom:2px">
+        <div class="entry-name" style="font-size:8.4pt">Freelance Web Developer</div>
+      </div>
+      <div class="edu-school">Self-Employed · Halifax, NS</div>
+      <div class="edu-date">2024 – Present</div>
+      <ul class="entry-bullets">
+        <li>Delivered production websites and booking systems for local businesses — full lifecycle from client brief through design, development, and deployment</li>
+        <li>Integrated third-party APIs including Twilio SMS, Stripe, and Firebase across multiple client projects</li>
+        <li>Managed client relationships directly, handling requirements, revisions, and handoff documentation</li>
+      </ul>
+
+      <div class="entry-top" style="margin-bottom:2px; margin-top:10px">
+        <div class="entry-name" style="font-size:8.4pt">Fitness Centre Supervisor</div>
+      </div>
+      <div class="edu-school">Saint Mary's University — SMUfit</div>
+      <div class="edu-date">Nov 2022 – Jan 2025</div>
+      <ul class="entry-bullets">
+        <li>Managed daily operations, class scheduling, and membership services</li>
+        <li>Led conflict resolution and emergency response — composure under pressure</li>
+      </ul>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+      <div class="sec-title">Links</div>
+      <div class="link-item">
+        <div class="link-label">Portfolio</div>
+        <div class="link-val"><a href="https://yousseflakhal.com">yousseflakhal.com</a></div>
+      </div>
+      <div class="link-item">
+        <div class="link-label">GitHub</div>
+        <div class="link-val"><a href="https://github.com/YoussefLKH">github.com/YoussefLKH</a></div>
+      </div>
+      <div class="link-item">
+        <div class="link-label">Halifax.AI</div>
+        <div class="link-val"><a href="https://halifaxai-beta.onrender.com">halifaxai-beta.onrender.com</a></div>
+      </div>
+      <div class="link-item">
+        <div class="link-label">P2P Chat</div>
+        <div class="link-val"><a href="https://p2p-encrypted-chat.vercel.app">p2p-encrypted-chat.vercel.app</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
