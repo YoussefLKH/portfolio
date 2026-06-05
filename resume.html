@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Lakhal — Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:  #1a1618;
+  --red:  #c8102e;
+  --gold: #a07828;
+  --dim:  #5a5050;
+  --soft: #8a7a68;
+  --rule: #e0d8cc;
+  --bg:   #ffffff;
+}
+
+@page {
+  size: letter;
+  margin: 0.3in 0.5in;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 7.5pt;
+  line-height: 1.28;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── HEADER ─────────────────────────────── */
+.header { text-align: center; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1.5px solid var(--ink); }
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 21pt; font-weight: 900;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink); line-height: 1;
+  margin-bottom: 3px;
+}
+.role {
+  font-size: 8.2pt; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red); font-weight: 600; margin-bottom: 6px;
+}
+.contacts {
+  font-size: 8pt; color: var(--dim);
+  display: flex; justify-content: center; align-items: center;
+  gap: 6px; flex-wrap: wrap;
+}
+.contacts a { color: var(--red); text-decoration: none; }
+.contacts a:hover { text-decoration: underline; }
+.dot { color: var(--rule); }
+
+/* ── LAYOUT ─────────────────────────────── */
+.body-wrap {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 22px;
+}
+
+/* ── SECTIONS ───────────────────────────── */
+.section { margin-bottom: 6px; }
+.section:last-child { margin-bottom: 0; }
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 8.6pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px;
+  color: var(--red);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 5px;
+}
+
+/* ── PROFILE ────────────────────────────── */
+.profile p {
+  font-size: 8.4pt; line-height: 1.5; color: var(--dim);
+}
+
+/* ── ENTRY (projects / experience) ─────── */
+.entry { margin-bottom: 3.5px; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; margin-bottom: 1px;
+}
+.entry-name {
+  font-weight: 700; font-size: 9pt; color: var(--ink);
+}
+.entry-date {
+  font-size: 7.7pt; color: var(--soft); white-space: nowrap; flex-shrink: 0;
+  font-style: italic;
+}
+.entry-stack {
+  font-size: 7.4pt; color: var(--red); margin-bottom: 3px;
+  font-style: italic;
+}
+.entry-bullets { list-style: none; }
+.entry-bullets li {
+  font-size: 7.6pt; line-height: 1.28; color: var(--dim);
+  padding-left: 12px; position: relative; margin-bottom: 0.5px;
+}
+.entry-bullets li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--gold); font-size: 7.8pt;
+}
+.entry-link {
+  font-size: 7.5pt; color: var(--red);
+  text-decoration: none; font-style: italic;
+}
+
+/* ── ADDITIONAL PROJECTS (compact list) ── */
+.add-list { list-style: none; }
+.add-list li {
+  font-size: 7.8pt; line-height: 1.34; color: var(--dim);
+  padding-left: 12px; position: relative; margin-bottom: 1.5px;
+}
+.add-list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--gold); font-size: 7.8pt;
+}
+.add-list .add-name { color: var(--ink); font-weight: 600; }
+.add-list .add-stack { color: var(--red); font-style: italic; font-size: 7.5pt; }
+.add-list a { color: var(--red); text-decoration: none; font-style: italic; }
+
+/* ── SIDEBAR ────────────────────────────── */
+.sidebar .section { margin-bottom: 5px; }
+
+.skill-group { margin-bottom: 3px; }
+.skill-label {
+  font-size: 7.2pt; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 1px;
+}
+.skill-items {
+  font-size: 7.6pt; color: var(--dim); line-height: 1.36;
+}
+
+.edu-name { font-weight: 700; font-size: 8.4pt; color: var(--ink); margin-bottom: 1px; }
+.edu-school { font-size: 7.7pt; color: var(--red); font-style: italic; margin-bottom: 1px; }
+.edu-date { font-size: 7.3pt; color: var(--soft); margin-bottom: 3px; }
+.edu-notes { list-style: none; }
+.edu-notes li {
+  font-size: 7.5pt; color: var(--dim); padding-left: 11px; position: relative; margin-bottom: 0.5px;
+}
+.edu-notes li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+
+.link-item { margin-bottom: 3px; }
+.link-label {
+  font-size: 7.3pt; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600;
+}
+.link-val { font-size: 7.9pt; color: var(--dim); }
+.link-val a { color: var(--red); text-decoration: none; }
+
+@media print {
+  body { background: white; }
+  .header { -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ───────────────────────────────────────── -->
+<div class="header">
+  <div class="name">Youssef Lakhal</div>
+  <div class="role">Full-Stack Developer &nbsp;·&nbsp; AI Integration Specialist</div>
+  <div class="contacts">
+    <span>Halifax, NS</span>
+    <span class="dot">·</span>
+    <a href="tel:9022106502">(902) 210-6502</a>
+    <span class="dot">·</span>
+    <a href="mailto:yousseflkh25901@gmail.com">yousseflkh25901@gmail.com</a>
+    <span class="dot">·</span>
+    <a href="https://github.com/YoussefLKH">github.com/YoussefLKH</a>
+    <span class="dot">·</span>
+    <a href="https://yousseflakhal.com">yousseflakhal.com</a>
+  </div>
+</div>
+
+<!-- ── BODY ─────────────────────────────────────────── -->
+<div class="body-wrap">
+
+  <!-- ── MAIN COLUMN ─────────────────────────────── -->
+  <div class="main">
+
+    <!-- PROFILE -->
+    <div class="section profile">
+      <div class="sec-title">Profile</div>
+      <p>Full-stack developer and Computing Science graduate with 2+ years of freelance experience delivering production-grade SaaS platforms, client brand sites, and real-time systems. Comfortable across the full stack — Next.js, Node.js, Supabase, Firebase, Stripe, and the Claude API — shipping end-to-end products solo from brief through deployment, billing, and handoff.</p>
+    </div>
+
+    <!-- FEATURED PROJECTS -->
+    <div class="section">
+      <div class="sec-title">Featured Projects</div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Sculpted Medical Aesthetics — Client Brand Site</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="entry-stack">HTML5 · CSS3 · JavaScript · Vercel · Custom Domain</div>
+        <ul class="entry-bullets">
+          <li>Designed and delivered a multi-page luxury client website for a Halifax medical aesthetics clinic — service pages for injectables, skin treatments, beauty bar, and massage with SEO-structured headings and meta tags</li>
+          <li>Built a custom loading-screen logo reveal, scroll-triggered fade animations, and a rose-gold design language; deployed under the client's own custom domain</li>
+        </ul>
+        <a class="entry-link" href="https://sculptedmedicalaesthetics.com">↗ sculptedmedicalaesthetics.com</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Delight Maker — Employee Gifting SaaS Platform</div>
+          <div class="entry-date">2026</div>
+        </div>
+        <div class="entry-stack">Node.js · Express · Firebase · Stripe · Claude API · Resend · node-cron · csv-parse</div>
+        <ul class="entry-bullets">
+          <li>Built a full-stack B2B SaaS automating fresh-treat delivery to employees — three-portal architecture serving companies, bakers, and admins from one Node/Express codebase with Firebase Auth gating each role</li>
+          <li>Implemented CSV roster onboarding, Stripe subscription billing with webhook-driven plan management, and node-cron scheduled fulfillment with Resend emails; used the Claude API to personalize deliveries by dietary tags and past gifts</li>
+        </ul>
+        <a class="entry-link" href="https://delightmaker-beta.vercel.app">↗ delightmaker-beta.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Harbour Automation — Done-For-You Automation SaaS</div>
+          <div class="entry-date">2026 – Present</div>
+        </div>
+        <div class="entry-stack">Node.js · Express · Supabase (Postgres + RLS) · Stripe · Claude API · Nodemailer</div>
+        <ul class="entry-bullets">
+          <li>Building a B2B SaaS that sells and delivers managed automation systems to Atlantic Canada businesses, running the full funnel through one platform: AI application wizard, admin review and invite, client onboarding, and dashboard</li>
+          <li>Backed the platform with Supabase (Postgres) using row-level security policies enforced at the database layer, isolating each client's applications, systems, invoices, and support threads</li>
+          <li>Built a Claude-powered conversational intake that interviews applicants and generates structured lead summaries, plus Stripe retainer billing with webhook-driven payment confirmation and access provisioning</li>
+        </ul>
+        <a class="entry-link" href="https://harbour-automation.vercel.app">↗ harbour-automation.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Farias Soccer Academy — Client Brand Site</div>
+          <div class="entry-date">2026</div>
+        </div>
+        <div class="entry-stack">Next.js 16 · React 19 · TypeScript · Tailwind v4 · Framer Motion · Lenis</div>
+        <ul class="entry-bullets">
+          <li>Built a fully animated brand site for a Nova Scotia soccer academy on the Next.js 16 App Router with React 19 end to end — ten component-isolated sections covering academy, coaches, programs, pathway, league, gallery, and contact</li>
+          <li>Engineered a scroll-driven motion language with Framer Motion (crest parallax, counter-parallax ghosted wordmark, staggered hero rises, magnetic CTAs) layered over Lenis smooth-scroll for the buttery feel throughout</li>
+        </ul>
+        <a class="entry-link" href="https://fsa-website-one.vercel.app">↗ fsa-website-one.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
+          <div class="entry-name">Halifax.AI — AI Agency SaaS Platform</div>
+          <div class="entry-date">2025 – Present</div>
+        </div>
+        <div class="entry-stack">Node.js · Express · Firebase · Claude API · Stripe · Google Drive API · Gmail API</div>
+        <ul class="entry-bullets">
+          <li>Architected and built a full-stack SaaS deploying four specialized AI agents (Nova, Atlas, Echo, Vault) serving small businesses across content, analytics, customer chat, and document workflows</li>
+          <li>Built a 7-step AI strategy wizard (Google Places, PageSpeed Insights, Claude API) generating personalized reports, plus Stripe billing with webhook-driven agent provisioning and a real-time Firestore chat dashboard</li>
+        </ul>
+        <a class="entry-link" href="https://halifaxai-beta.onrender.com">↗ halifaxai-beta.onrender.com</a>
+      </div>
+
+    </div>
+
+    <!-- ADDITIONAL PROJECTS -->
+    <div class="section">
+      <div class="sec-title">Selected Additional Work</div>
+      <ul class="add-list">
+        <li>
+          <span class="add-name">Get Right Cuts — Barbershop Booking.</span>
+          Real-time slot availability, Twilio SMS confirmations, password-protected admin dashboard.
+          <span class="add-stack">Node.js · Express · Twilio.</span>
+          <a href="https://getrightcuts.vercel.app">getrightcuts.vercel.app</a>
+        </li>
+        <li>
+          <span class="add-name">World Cup 2026 Simulator.</span>
+          Full-bracket FIFA simulator with physics-based 5v5 canvas matches at 60fps, ELO odds, penalties, and VAR.
+          <span class="add-stack">Canvas API · JavaScript.</span>
+          <a href="https://worldcup-simulator-flame.vercel.app">worldcup-simulator-flame.vercel.app</a>
+        </li>
+        <li>
+          <span class="add-name">Void Rush — Browser Arcade Game.</span>
+          15-level shooter with 3 bosses, a custom 60fps engine, particle system, and live leaderboard.
+          <span class="add-stack">TypeScript · PixiJS · Vite.</span>
+          <a href="https://voidrush.vercel.app">voidrush.vercel.app</a>
+        </li>
+        <li>
+          <span class="add-name">P2P Encrypted Chat — CSCI 3421.</span>
+          Peer-to-peer chat with Diffie-Hellman key exchange, XOR encryption, and a live packet intercept panel.
+          <span class="add-stack">JavaScript · Diffie-Hellman · XOR.</span>
+          <a href="https://p2p-encrypted-chat.vercel.app">p2p-encrypted-chat.vercel.app</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ── SIDEBAR ──────────────────────────────────── -->
+  <div class="sidebar">
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="sec-title">Technical Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="skill-items">JavaScript ES6+, TypeScript, Python, C# / .NET, Java, C / C++, SQL / T-SQL, HTML5, CSS3</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Frameworks &amp; Libraries</div>
+        <div class="skill-items">Next.js 16, React 19, Node.js, Express, Tailwind v4, Framer Motion, Lenis, PixiJS, Vite, Svelte</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">AI &amp; APIs</div>
+        <div class="skill-items">Claude API (Anthropic SDK), OpenAI API, Stripe (subscriptions, retainers &amp; webhooks), Supabase (Auth, Postgres, RLS), Firebase (Admin SDK, Firestore), Google APIs (Drive, Gmail, Places), Twilio, Resend, Nodemailer</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Cloud &amp; Tooling</div>
+        <div class="skill-items">Vercel, Render, Supabase, Firebase, Azure, AWS, Google Cloud, Docker, Git / GitHub, GitHub Actions</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Concepts</div>
+        <div class="skill-items">SaaS architecture, REST API design, OAuth 2.0, webhook-driven workflows, scheduled jobs, real-time systems, CI/CD, responsive &amp; accessible UI</div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="sec-title">Experience</div>
+
+      <div class="entry-top" style="margin-bottom:1px">
+        <div class="entry-name" style="font-size:8.4pt">Freelance Web Developer</div>
+      </div>
+      <div class="edu-school">Self-Employed · Halifax, NS</div>
+      <div class="edu-date">2024 – Present &nbsp;·&nbsp; 2+ years</div>
+      <ul class="entry-bullets">
+        <li>Delivered production websites and SaaS platforms for local Halifax businesses — full lifecycle from brief through design, development, billing integration, and deployment under custom domains</li>
+        <li>Integrated third-party APIs across client projects: Stripe billing, Twilio SMS, Firebase Auth/Firestore, Claude API, Resend email, Google Workspace</li>
+        <li>Managed client relationships end to end — requirements, revisions, demo presentations, and handoff documentation</li>
+      </ul>
+
+      <div class="entry-top" style="margin-bottom:1px; margin-top:8px">
+        <div class="entry-name" style="font-size:8.4pt">Fitness Centre Supervisor</div>
+      </div>
+      <div class="edu-school">Saint Mary's University — SMUfit</div>
+      <div class="edu-date">Nov 2022 – Jan 2025</div>
+      <ul class="entry-bullets">
+        <li>Managed daily operations, scheduling, and membership services; led conflict resolution and emergency response under pressure</li>
+      </ul>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="sec-title">Education</div>
+      <div class="edu-name">Bachelor of Computing Science</div>
+      <div class="edu-school">Saint Mary's University</div>
+      <div class="edu-date">Halifax, NS &nbsp;·&nbsp; Sep 2019 – 2025</div>
+      <ul class="edu-notes">
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Software Engineering</li>
+        <li>Data Communications &amp; Networking</li>
+        <li>Database Systems</li>
+        <li>Operating Systems</li>
+        <li>Mobile Development</li>
+      </ul>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+      <div class="sec-title">Links</div>
+      <div class="link-item">
+        <div class="link-label">Portfolio</div>
+        <div class="link-val"><a href="https://yousseflakhal.com">yousseflakhal.com</a></div>
+      </div>
+      <div class="link-item">
+        <div class="link-label">GitHub</div>
+        <div class="link-val"><a href="https://github.com/YoussefLKH">github.com/YoussefLKH</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
